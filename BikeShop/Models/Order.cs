@@ -12,7 +12,11 @@ namespace BikeShop.Models
         [Key]
         public int OrderID { get; set; }
 
-        public int OrderDate { get; set; }
+
+        [required][Display(Name = "Order Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{dd:yyyy:mm}", ApplyFormatInEditMode = true)]
+        public DateTime OrderDate { get; set; }
 
         [Required(ErrorMessage = "Quantity is required")]
         [Display(Name = "Quantity")]
